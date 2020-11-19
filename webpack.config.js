@@ -1,35 +1,62 @@
+// npm run webpack pour build
+// npm start pour serveur virtuel
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin"); 
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: path.resolve(__dirname, "src/index.js"),
+  entry: {
+    main: path.join(__dirname, "src/index.js"),
+    form: path.join(__dirname, "src/form/form.js"), // déclaration d'un nouveau point d'entrer
+    topbar: path.join(__dirname, "src/assets/javascripts/topbar.js") // on peut également déclarer un fichier js
+  },
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.join(__dirname, "dist"),
     filename: "[name].bundle.js"
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        test: /\.js/,
+        exclude: /(node_modules)/,
+        use: ["babel-loader"]
+      },
+      {
+        test: /\.scss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './src/assets/img/*',
+          to: "assets/img",
+          flatten: true // récupération des images sans récupérer le path
+        }
+      ]
+  }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src/index.html")
+      filename: 'index.html',
+      template: path.join(__dirname, "./src/index.html"),
+      chunks: ["main", "topbar"] // le fait de déclarer topbar dans index et form va permettre au navigateur de le conserver dans le cache
+    }),
+    new HtmlWebpackPlugin({ 
+      filename: 'form.html',
+      template: path.join(__dirname, "./src/form/form.html"),
+      chunks: ["form", "topbar"]
     })
   ],
+  stats: "minimal",
   devtool: "source-map",
   mode: "development",
   devServer: {
-    contentBase: path.resolve(__dirname, "./dist"),
+    open: false,
+    contentBase: "./dist",
     inline: true,
-    open: true,
-    hot: true,
     port: 4000
   }
 };
