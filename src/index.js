@@ -1,5 +1,6 @@
 import "./assets/styles/styles.scss";
 import "./index.scss";
+import { openModal } from './assets/javascripts/modal';
 
 
 const articleContainerElement = document.querySelector(".articles-container");
@@ -67,8 +68,11 @@ const createArticles = () => {
   });
   deleteButtons.forEach(button => {
     button.addEventListener("click", async event => {
-      try {
-        const target = event.target;
+      const result = await openModal('êtes vous sûr de vouloir supprimer votre article ?'
+        );
+      if (result === true) {
+        try {
+          const target = event.target;
         const articleId = target.dataset.id;
         const response = await fetch(
           `https://restapi.fr/api/article/${articleId}`,
@@ -82,6 +86,7 @@ const createArticles = () => {
       } catch (e) {
         console.log("e : ", e);
       }
+      } 
     });
   });
 };
