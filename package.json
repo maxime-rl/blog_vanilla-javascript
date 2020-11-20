@@ -29,6 +29,8 @@
     "core-js": "^3.7.0",
     "css-loader": "^5.0.1",
     "html-webpack-plugin": "^4.5.0",
+    "npm-install-webpack-plugin": "^4.0.5",
+    "regenerator-runtime": "^0.13.7",
     "sass": "^1.29.0",
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
