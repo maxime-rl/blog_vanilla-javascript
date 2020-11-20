@@ -36,3 +36,29 @@
         color: var(--error);
     }
 }
+
+.calc {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    .modal {
+       background: white;
+       min-width: 30rem;
+       border-radius: 0.3rem;
+       padding: 5rem;
+       box-shadow: var(--box-shadow);
+       text-align: center;
+       p {
+           margin: 1rem 3rem 5rem;
+       }
+       .btn {
+           margin: 0 1.5rem;
+       }
+    }
+}
