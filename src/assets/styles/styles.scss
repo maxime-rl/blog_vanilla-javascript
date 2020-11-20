@@ -18,7 +18,7 @@
 header {
     grid-area: header;
     background: var(--primary);
-    padding: 20px;
+    padding: 2rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -30,23 +30,62 @@ header {
         font-size: 4rem;
         font-weight: 700;
     }
-    ul {
-        display: flex;
-        li {
-            .header-nav {
-                font-size: 1.8rem;
-                padding: 0 10px;
+    .header-menu {
+        position: relative;
+        ul {
+            display: flex;
+            @include xs {
+                display: none;
             }
-            .active {
-                font-weight: 700;
-                text-decoration: underline;
+            li {
+                .header-nav {
+                    font-size: 1.8rem;
+                    padding: 0 10px;
+                }
+                .active {
+                    font-weight: 700;
+                    text-decoration: underline;
+                }
             }
+        }
+        .header-menu-icon {
+            display: none;
+            font-size: 3rem;
+            color: white;
+            @include xs {
+                display: block;
+                cursor: pointer;
+            }
+        }
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 6rem;
+            right: -2rem;
+            padding: 3rem 1.5rem;
+            width: 18rem;
+            border-bottom-left-radius: 0.3rem;
+            background: var(--primary);
+            ul {
+                display: block;
+                text-align: end;
+                li {
+                    margin: 2rem 0;
+                    a {
+                        color: white;
+                    }
+                }
+            }
+        }
+        .mobile-menu.open {
+            display: block;
         }
     }
 }
 
 .content {
     grid-area: content;
+    background: var(--diviser);
     padding: 20px;
 }
 
