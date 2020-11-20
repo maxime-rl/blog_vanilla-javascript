@@ -5,23 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.js" integrity="sha512-14GPUgKFTeCsgj5WWZpTNQ525GYlOK3DMTqrjsly3TDIDnOUbZ5sWyfI6HqsWUmMmaCoa6q7FHrbq9xdqNhmYg==" crossorigin="anonymous"></script>
     <title>Blog</title>
 </head>
 <body>
     <div class="container">
-        <header>
-            <a href="./index.html" class="header-brand">Blog</a>
-            <ul>
-                <li>
-                    <a href="./index.html" class="header-nav active">Accueil</a>
-                </li>
-                <li>
-                    <a href="./form.html" class="header-nav">Créer un article</a>
-                </li>
-            </ul>
-        </header>
-        <div class="content"></div>
-        <footer>© blog 2020</footer>
+      <header>
+        <a class="header-brand" href="./index.html">Blog</a>
+        <div class="header-menu">
+          <ul>
+            <li>
+              <a href="./index.html" class="header-nav active">Accueil</a>
+            </li>
+            <li>
+              <a href="./form.html" class="header-nav">Créer un article</a>
+            </li>
+          </ul>
+          <div class="header-menu-icon">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </header>
+      <div class="content">
+        <div class="articles-container"></div>
+      </div>
+      <footer>© blog</footer>
     </div>
-</body>
+  </body>
 </html>
