@@ -20,9 +20,9 @@
         color: whitesmoke;
     }
     &-secondary {
-        border: 1px solid var(--primary);
-        background: white;
-        color: var(--primary);
+        border: 1px solid var(--secondary);
+        background: var(--secondary);
+        color: var(--white);
     }
     &-danger {
         border: 1px solid var(--error);

@@ -6,10 +6,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.js" integrity="sha512-14GPUgKFTeCsgj5WWZpTNQ525GYlOK3DMTqrjsly3TDIDnOUbZ5sWyfI6HqsWUmMmaCoa6q7FHrbq9xdqNhmYg==" crossorigin="anonymous"></script>
     <title>Formulaire</title>
 </head>
-<body>
+<body class="light-theme">
     <div class="container">
         <header>
             <a href="./index.html" class="header-brand">Blog</a>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
             <div class="header-menu">
                 <ul>
                     <li>
@@ -25,7 +29,7 @@
             </div>
         </header>
         <div class="content">
-            <form action="">
+            <form id="form">
                 <h3 class="title-underline">Ajouter un article</h3>
                 <div class="form-group">
                     <label>Auteur</label>

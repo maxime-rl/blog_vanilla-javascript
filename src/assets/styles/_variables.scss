@@ -1,18 +1,44 @@
-:root {
-    --primary: #2980b9;
-    --secondary: ##f1c40f;
-    --dark-grey: #1c1c1c;
-    --silver: #bdc3c7;
-    --accent: #34495e;
-    --text: #333;
-    --error: #e91313;
-    --divider: #ecf0f1;
-    --font-family: 'Roboto', sans-serif;
-    --box-shadow: 0 2px 40px 0 rgba(0,0,0,0.07);
-    --box-shadow-hover: rgba(45,45,45,0.05) 0px 2px 2px,
-                        rgba(49,49,49,0.05) 0px 4px 4px, 
-                        rgba(42,42,42,0.05) 0px 8px 8px, 
-                        rgba(32,32,32,0.05) 0px 16px 16px, 
-                        rgba(49,49,49,0.05) 0px 32px 32px, 
-                        rgba(35,35,35,0.05) 0px 64px 64px;
-}
+  :root {
+    .light-theme {
+      --primary: #ffa62b;
+      --secondary: #16697a;
+      --dark-grey: #1c1c1c;
+      --grey: #535353;
+      --white: #fafafa;
+      --silver: #afb5b9;
+      --accent: #34495e;
+      --text: #333;
+      --error: #e91313;
+      --light-silver: #eeeeee;
+      --font-family: 'Roboto', sans-serif;
+      --box-shadow: 0 2px 40px 0 rgba(0,0,0,0.07);
+      --box-shadow-hover: rgba(45,45,45,0.05) 0px 2px 2px,
+                          rgba(49,49,49,0.05) 0px 4px 4px, 
+                          rgba(42,42,42,0.05) 0px 8px 8px, 
+                          rgba(32,32,32,0.05) 0px 16px 16px, 
+                          rgba(49,49,49,0.05) 0px 32px 32px, 
+                          rgba(35,35,35,0.05) 0px 64px 64px;
+  }
+
+  .dark-theme {
+      --primary: #393939;
+      --secondary: #ffab2d;
+      --dark-grey: #1c1c1c;
+      --white: #393939;
+      --silver: #afb5b9;
+      --accent: #34495e;
+      --text: #f7f4f4;
+      --error: #e91313;
+      --light-silver: #525252;
+      --font-family: 'Roboto', sans-serif;
+      --box-shadow: 0 2px 40px 0 rgba(0,0,0,0.07);
+      --box-shadow-hover: rgba(45,45,45,0.05) 0px 2px 2px,
+                          rgba(49,49,49,0.05) 0px 4px 4px, 
+                          rgba(42,42,42,0.05) 0px 8px 8px, 
+                          rgba(32,32,32,0.05) 0px 16px 16px, 
+                          rgba(49,49,49,0.05) 0px 32px 32px, 
+                          rgba(35,35,35,0.05) 0px 64px 64px;
+  }
+  }
+  
+  

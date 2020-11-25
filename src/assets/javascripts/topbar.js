@@ -3,6 +3,7 @@ const headerMenu = document.querySelector(".header-menu");
 let isMenuOpen = false;
 let mobileMenuDOM;
 
+
 const closeMenu = () => {
   mobileMenuDOM.classList.remove("open");
 };

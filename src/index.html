@@ -8,8 +8,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.js" integrity="sha512-14GPUgKFTeCsgj5WWZpTNQ525GYlOK3DMTqrjsly3TDIDnOUbZ5sWyfI6HqsWUmMmaCoa6q7FHrbq9xdqNhmYg==" crossorigin="anonymous"></script>
     <title>Blog</title>
 </head>
-<body>
-    <div class="container">
+<body class="light-theme">
+    <div class="container dark-mode">
       <header>
         <a class="header-brand" href="./index.html">Blog</a>
         <div class="header-menu">
@@ -26,14 +26,20 @@
           </div>
         </div>
       </header>
-      <div class="content">
-        <div class="sidebar">
-          <select>
-            <option value="desc">Le plus récent</option>
-            <option value="asc">Le plus ancien</option>
-          </select>
-          <ul class="categories">
-          </ul>
+      <div id="content" class="content">
+        <div class="sidebar-content">
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+          <div class="sidebar">
+            <select>
+              <option value="desc">Le plus récent</option>
+              <option value="asc">Le plus ancien</option>
+            </select>
+            <ul class="categories">
+            </ul>
+          </div>
         </div>
         <div class="articles-container"></div>
       </div>

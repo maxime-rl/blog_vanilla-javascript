@@ -1,9 +1,12 @@
+@import '../assets/styles/styles.scss';
+
 .content {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: var(--light-silver);
     form {
-        background: white;
+        background: var(--white);
         max-width: 700px;
         width: 100%;
         margin: 5rem 0;
@@ -18,11 +21,12 @@
             flex-direction: column;
             label {
                 font-size: 1.6rem;
-                color: var(--accent);
+                color: var(--text);
                 margin-bottom: 1rem;
             }
             input, textarea {
-                border: 1px solid var(--divider);
+                background: var(--light-silver);
+                border: 1px solid var(--light-silver);
                 padding: 1rem;
                 outline: 0;
                 border-radius: 3px;

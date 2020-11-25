@@ -18,8 +18,14 @@ h1 {
 
 h2 {
     font-size: 5.5rem;
-    @include xs {
+    @include md {
+        font-size: 4.5rem;
+    }
+    @include xsm {
         font-size: 4rem;
+    }
+    @include xs {
+        font-size: 2.5rem;
     }
 }
 

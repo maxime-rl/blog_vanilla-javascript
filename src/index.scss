@@ -1,43 +1,61 @@
 @import "./assets/styles/media-queries";
 
 .content {
-  background: var(--divider);
+  background: var(--light-silver);
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding-top: 5rem;
-  .sidebar {
-    flex: 0 0 25rem;
+  @include xsm {
+    flex-direction: column;
+    align-items: center;
+  }
+  .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 0 0 30rem;
     padding: 0 2rem 2rem 2rem;
-    select {
-      width: 100%;
-      margin-bottom: 2rem;
-      border-radius: 0.3rem;
-      background: white;
-      border: 0;
-      outline: 0;
-      padding: 1rem;
-      box-shadow: var(--box-shadow);
+    @include xsm {
+      padding: 2rem 0rem 2rem 0rem;
     }
-    .categories {
-      padding: 1rem;
-      background: white;
-      border-radius: 0.3rem;
-      box-shadow: var(--box-shadow);
-      li {
-        margin: 1.5rem 1rem;
-        transition: color 0.2s;
-        cursor: pointer;
-        &:hover {
-          color: var(--primary);
+    .sidebar {
+      
+      select {
+        width: 100%;
+        margin-bottom: 2rem;
+        border-radius: 0.3rem;
+        background: var(--white);
+        color: var(--text);
+        border: 0;
+        outline: 0;
+        padding: 1rem;
+        box-shadow: var(--box-shadow);
+      }
+      .categories {
+        padding: 1rem;
+        background: var(--white);
+        border-radius: 0.3rem;
+        box-shadow: var(--box-shadow);
+        li {
+          color: var(--text);
+          margin: 1.5rem 1rem;
+          transition: color 0.2s;
+          cursor: pointer;
+          &:hover {
+            color: var(--secondary);
+            strong {
+              color: var(--secondary);
+            }
+          }
           strong {
-            color: var(--primary);
+            color: var(--secondary);
           }
         }
-      }
-      .active {
-        color: var(--primary);
-        font-weight: 700;
+        .active {
+          color: var(--primary);
+          font-weight: 700;
+        }
       }
     }
   }
@@ -46,10 +64,15 @@
     flex: 1;
     margin: 0 0 10rem 0;
     .article {
-      background: white;
+      background: var(--white);
       padding: 0 5rem;
+      @include xsm {
+        padding: 0 3rem;
+        margin-bottom: 2rem;
+      }
       @include xs {
-        padding: 0 2rem;
+        padding: 0 1.5rem;
+        margin-bottom: 2rem;
       }
       border-radius: 0.3rem;
       display: flex;
@@ -64,18 +87,27 @@
         display: flex;
         margin: 2rem 0 2rem;
         @include xs {
-          font-size: 1.4rem;
+          font-size: 1.2rem;
+          margin: 1rem 0 2rem;
         }
         img {
           height: 6rem;
           width: 6rem;
           border-radius: 50%;
           margin-right: 2.5rem;
+          @include xs {
+            height: 5rem;
+            width: 5rem;
+            margin-right: 1.4rem;
+          }
         }
         .description-author {
           display: flex;
           flex-direction: column;
           justify-content: space-evenly;
+          @include xsm {
+            justify-content: center;
+          }
           .article-author {
             color: var(--silver);
           }
@@ -87,6 +119,9 @@
       h2 {
         margin-top: 2rem;
         margin-bottom: 0;
+        @include xs {
+          margin-top: 1rem;
+        }
       }
       .article-content {
         max-width: 800px;
@@ -94,9 +129,17 @@
         p {
           font-size: 2.2rem;
           line-height: 3.5rem;
-          @include xs {
+          @include md {
             font-size: 2rem;
             line-height: 3rem;
+          }
+          @include xsm {
+            font-size: 2rem;
+            line-height: 3rem;
+          }
+          @include xs {
+            font-size: 1.4rem;
+            line-height: 2rem;
           }
         }
       }
@@ -106,9 +149,12 @@
         justify-content: flex-end;
         padding: 2rem 0;
         margin-top: 2rem;
-        border-top: 1px solid var(--divider);
+        border-top: 1px solid var(--light-silver);
         .btn {
           margin-left: 1rem;
+          @include xs {
+            padding: 1rem;
+          }
         }
       }
     }

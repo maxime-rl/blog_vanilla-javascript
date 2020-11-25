@@ -27,32 +27,33 @@ const createArticles = () => {
     const articleDOM = document.createElement("div");
     articleDOM.classList.add("article");
     articleDOM.innerHTML = `
-<div class="article-header">
-<h2>${article.title}</h2>
-<div class="header-author">
-<img src="${article.img}" alt="profile"/>
-<div class="description-author">
-<p class="article-author">Auteur: ${article.author}</p>
-<p class="article-author">${article.author} - ${new Date(
-  article.createdAt
-).toLocaleDateString("fr-FR", {
-  weekday: "long",
-  day: "2-digit",
-  month: "long",
-  year: "numeric"
-})}</p>
-</div>
-</div>
-</div>
-<div class="article-content">
-<p>${article.content}</p>
-</div>
-<div class="article-actions">
-  <button class="btn btn-danger" data-id=${article._id} >Supprimer</button>
-  <button class="btn btn-primary" data-id=${article._id} >Modifier</button>
-</div>
-`;
-    return articleDOM;
+      <div class="article-header">
+        <h2>${article.title}</h2>
+          <div class="header-author">
+            <img src="${article.img}" alt="profile"/>
+            <div class="description-author">
+              <p class="article-author">Auteur: ${article.author}</p>
+              <p class="article-author">
+                 ${new Date(
+                    article.createdAt
+                  ).toLocaleDateString("fr-FR", {
+                    weekday: "long",
+                    day: "2-digit",
+                    month: "long",
+                    year: "numeric"
+                  })}</p>
+            </div>
+          </div>
+        </div>
+      <div class="article-content">
+        <p>${article.content}</p>
+      </div>
+      <div class="article-actions">
+        <button class="btn btn-danger" data-id=${article._id} >Supprimer</button>
+        <button class="btn btn-secondary" data-id=${article._id} >Modifier</button>
+      </div>
+      `;
+      return articleDOM;
   });
   articleContainerElement.innerHTML = "";
   articleContainerElement.append(...articlesDOM);
@@ -148,3 +149,10 @@ const fetchArticle = async () => {
 };
 
 fetchArticle();
+
+// dark mode
+const themeSwitch = document.querySelector('input');
+
+themeSwitch.addEventListener('change', () => {
+  document.body.classList.toggle('dark-theme');
+});
