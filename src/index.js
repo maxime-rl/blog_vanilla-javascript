@@ -58,7 +58,7 @@ const createArticles = () => {
   articleContainerElement.innerHTML = "";
   articleContainerElement.append(...articlesDOM);
   const deleteButtons = articleContainerElement.querySelectorAll(".btn-danger");
-  const editButtons = articleContainerElement.querySelectorAll('.btn-primary');
+  const editButtons = articleContainerElement.querySelectorAll('.btn-secondary');
   // redirection en recuperant l'id de l'article dans l'url
   editButtons.forEach(button => {
     button.addEventListener('click', event => {
